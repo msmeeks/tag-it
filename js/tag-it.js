@@ -75,7 +75,9 @@
             // Event callbacks.
             onTagAdded  : null,
             onTagRemoved: null,
-            onTagClicked: null
+            onTagClicked: null,
+
+            onAutocompleteSelected: null
         },
 
 
@@ -223,8 +225,12 @@
                         if (that._tagInput.val() === '') {
                             that.removeTag(that._lastTag(), false);
                         }
-                        that.createTag(ui.item.value);
+                        var tag = that.createTag(ui.item.value);
                         // Preventing the tag input to be updated with the chosen value.
+                        that._trigger('onAutocompleteSelected', event, {
+                            item: ui.item,
+                            tag: tag
+                        });
                         return false;
                     }
                 });
@@ -345,9 +351,9 @@
             this._tagInput.val('');
 
             // insert tag
-            this._tagInput.parent().before(tag);
+            return tag.insertBefore(this._tagInput.parent());
         },
-        
+
         removeTag: function(tag, animate) {
             animate = animate || this.options.animate;
 

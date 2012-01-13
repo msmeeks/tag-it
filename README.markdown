@@ -21,7 +21,7 @@ First, load [jQuery](http://jquery.com/) (v1.4 or greater), [jQuery UI](http://j
 The plugin requires a jQuery UI theme to be present, as well as its own included base CSS file ([jquery.tagit.css](http://github.com/aehlke/tag-it/raw/master/css/jquery.tagit.css)). Here we use the Flick theme as an example:
 
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
-	<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
 
 Now, let's attach it to an existing `<ul>` box:
 

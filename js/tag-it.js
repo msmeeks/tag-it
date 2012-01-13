@@ -85,8 +85,8 @@
             hintHideEffectOptions: {},
             hintHideEffectSpeed: 200,
 
-			// Whether to remove the selected tag and all the tags that were added after it when deleting a tag.
-			pruneTags: false,
+            // Whether to remove the selected tag and all the tags that were added after it when deleting a tag.
+            pruneTags: false,
 
             // Event callbacks.
             onTagAdded  : null,
@@ -414,8 +414,8 @@
             var that = this;
 
             if (this.options.pruneTags && !removeOnly) {
-				that.pruneTag(tag)
-			}
+                that.pruneTag(tag)
+            }
 
             animate = animate || this.options.animate;
 
@@ -457,22 +457,22 @@
             });
         },
 
-		pruneTag: function(targetTag) {
+        pruneTag: function(targetTag) {
             // Removes the specified tag and all the tags that were added after it.
-			console.log('pruning')
+            console.log('pruning')
             var that = this;
             targetTag = $(targetTag)[0];
-			console.log(targetTag);
+            console.log(targetTag);
 
-			var found = false;
+            var found = false;
 
             this.tagList.children('.tagit-choice').each(function(index, tag) {
-				if (tag == targetTag){
-					found = true;
-				}
-				if (found){
-					that.removeTag(tag, {}, true);
-				}
+                if (tag == targetTag){
+                    found = true;
+                }
+                if (found){
+                    that.removeTag(tag, {}, true);
+                }
             });
         }
     });

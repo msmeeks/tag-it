@@ -196,6 +196,13 @@ The speed of the hint hide effect.
 Defaults to *200*
 
 
+### pruneTags (boolean)
+
+When enabled and a tag is deleted all of the sbsequent tags will also be deleted.
+
+Defaults to *false*
+
+
 ## Events
 
 ### onTagAdded (function, Callback)
@@ -244,10 +251,20 @@ Adds new tag to the list. The `additionalClass` parameter is an optional way to 
 
     $("#mytags").tagit("createTag", "brand-new-tag");
 
+### pruneTag(tag)
+Remove the tag and all the tags added after it -- removes each pruned tag, so the onTagRemoved event callback (if set in the options) will be called for each.
+
+    $("#mytags").tagit("pruneTag", tag);
+
 ### removeAll()
 Clears the widget of all tags -- removes each tag it contains, so the onTagRemoved event callback (if set in the options) will be called for each.
 
     $("#mytags").tagit("removeAll");
+
+### tagLabel(tag)
+Returns the contents of the tag.
+
+    $("#mytags").tagit("tagLabel", tag);
 
 
 ## Authors

@@ -106,6 +106,14 @@
                 removeConfirmation: true
             });
             
+            //-------------------------------
+            // Prune tags
+            //-------------------------------
+            $('#pruneTags').tagit({
+			    availableTags: sampleTags,
+				pruneTags: true
+		    });
+
 	    });
 	</script>
 
@@ -216,6 +224,21 @@
 			<ul id="removeConfirmationTags">
                 <li>backspace me</li>
                 <li>me too</li>
+            </ul>
+			<input type="submit" value="Submit">
+	    </form>
+
+        <hr>
+        <h3>Prune Tags</h3>
+   	    <form>
+			<p>
+                When pruneTags is enabled and the user deletes a tag that tag and all the tags that were added after it are deleted.
+            </p>
+			<ul id="pruneTags">
+				<li>Tag1</li>
+				<li>Delete me</li>
+				<li>I am deleted</li>
+				<li>So am I</li>
             </ul>
 			<input type="submit" value="Submit">
 	    </form>

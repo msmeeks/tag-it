@@ -114,6 +114,530 @@
                 pruneTags: true
             });
 
+            //-------------------------------
+            // Hierarchical tags
+            //-------------------------------
+            var pets = [
+                {
+                    label: "amphibians",
+                    children: [
+                        {
+                            label: "frogs",
+                            children: [
+                                {
+                                    label: "African Clawed Frog",
+                                    children: []
+                                },
+                                {
+                                    label: "Dumpy (White’s) Treefrog",
+                                    children: []
+                                },
+                                {
+                                    label: "Fire-bellied Toad",
+                                    children: []
+                                },
+                                {
+                                    label: "Green Treefrog",
+                                    children: []
+                                },
+                                {
+                                    label: "Leopard Frog",
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            label: "salamandars",
+                            children: [
+                                {
+                                    label: "Fire-bellied Newt",
+                                    children: []
+                                },
+                                {
+                                    label: "Fire Salamander",
+                                    children: []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: "birds",
+                    children: [
+                        {
+                            label: "canaries & finches",
+                            children: [
+                                {
+                                    label: "Canaries",
+                                    children: []
+                                },
+                                {
+                                    label: "Gouldian Finches",
+                                    children: []
+                                },
+                                {
+                                    label: "Housing Finches",
+                                    children: []
+                                },
+                                {
+                                    label: "Society Finches",
+                                    children: []
+                                },
+                                {
+                                    label: "Zebra Finch",
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            label: "parrots & parakeets",
+                            children: [
+                                {
+                                    label: "Macaws",
+                                    children: []
+                                },
+                                {
+                                    label: "Cockatoo",
+                                    children: []
+                                },
+                                {
+                                    label: "Amazon Parrots",
+                                    children: []
+                                },
+                                {
+                                    label: "African Grey",
+                                    children: []
+                                },
+                                {
+                                    label: "Cockatiel",
+                                    children: []
+                                },
+                                {
+                                    label: "Conures",
+                                    children: []
+                                },
+                                {
+                                    label: "Lories and Lorikeets",
+                                    children: []
+                                },
+                                {
+                                    label: "Lovebirds",
+                                    children: []
+                                },
+                                {
+                                    label: "Parakeets/Budgies",
+                                    children: []
+                                },
+                                {
+                                    label: "Parrotlets",
+                                    children: []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: "mammals",
+                    children: [
+                        {
+                            label: "cats",
+                            children: [
+                                {
+                                    label: "long hair cats",
+                                    children: [
+                                        {
+                                            label: "British Longhair",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Himalayan",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Maine Coon",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Norwegian Forest Cat",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Persian",
+                                            children: []
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "medium hair cats",
+                                    children: [
+                                        {
+                                            label: "American Curl",
+                                            children: []
+                                        },
+                                        {
+                                            label: "American Wirehair",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Cymric",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Nebelung",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Selkirk Rex",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Turkish Van",
+                                            children: []
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "short hair cats",
+                                    children: [
+                                        {
+                                            label: "American Shorthair",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Abyssinian",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Cornish Rex",
+                                            children: []
+                                        },
+                                        {
+                                            label: "British Shorthair",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Burmese",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Ocicat",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Russian Blue",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Siamese",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Sphynx",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Tonkinese",
+                                            children: []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            label: "dogs",
+                            children: [
+                                {
+                                    label: "small dogs",
+                                    children: [
+                                        {
+                                            label: "Chihuahua",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Maltese",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Norfolk Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Pekingese",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Pomeranian",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Scottish Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Shih Tzu",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Skye Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Silky Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Toy Poodle",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Toy Fox Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Welsh Corgi",
+                                            children: []
+                                        },
+                                        {
+                                            label: "West Highland White Terrier",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Yorkshire Terrier",
+                                            children: []
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "medium dogs",
+                                    children: [
+                                        {
+                                            label: "Alaskan Malamute",
+                                            children: []
+                                        },
+                                        {
+                                            label: "American Bulldog",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Australian Shepherd",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Bearded Collie",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Border Collie",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Boxer",
+                                            children: []
+                                        },
+                                        {
+                                            label: "English Setter",
+                                            children: []
+                                        },
+                                        {
+                                            label: "English Cocker Spaniel",
+                                            children: []
+                                        },
+                                        {
+                                            label: "German Shepherd",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Olde English Bulldogge",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Old English Sheepdog",
+                                            children: []
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "large dogs",
+                                    children: [
+                                        {
+                                            label: "Great Pyrenees",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Greyhound",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Mastiff",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Great Dane",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Irish Wolfhound",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Polish Greyhound",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Saint Bernard",
+                                            children: []
+                                        },
+                                        {
+                                            label: "Scottish Deerhound",
+                                            children: []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            label: "small mammals",
+                            children: [
+                                {
+                                    label: "Chinchillas",
+                                    children: []
+                                },
+                                {
+                                    label: "Ferrets",
+                                    children: []
+                                },
+                                {
+                                    label: "Gerbils",
+                                    children: []
+                                },
+                                {
+                                    label: "Guinea Pigs",
+                                    children: []
+                                },
+                                {
+                                    label: "Hamsters",
+                                    children: []
+                                },
+                                {
+                                    label: "Hedgehogs",
+                                    children: []
+                                },
+                                {
+                                    label: "Mice",
+                                    children: []
+                                },
+                                {
+                                    label: "Rabbits",
+                                    children: []
+                                },
+                                {
+                                    label: "Rats",
+                                    children: []
+                                },
+                                {
+                                    label: "Sugar Gliders",
+                                    children: []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: "reptiles",
+                    children: [
+                        {
+                            label: "lizards",
+                            children:[
+                                {
+                                    label: "Bearded Dragon",
+                                    children: []
+                                },
+                                {
+                                    label: "Chameleon",
+                                    children: []
+                                },
+                                {
+                                    label: "Crested Gecko",
+                                    children: []
+                                },
+                                {
+                                    label: "Green Anole",
+                                    children: []
+                                },
+                                {
+                                    label: "Green Iguana",
+                                    children: []
+                                },
+                                {
+                                    label: "Leopard Gecko",
+                                    children: []
+                                },
+                                {
+                                    label: "Savannah Monitor",
+                                    children: []
+                                },
+                                {
+                                    label: "Water Dragon",
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            label: "snakes",
+                            children: [
+                                {
+                                    label: "Ball Python",
+                                    children: []
+                                },
+                                {
+                                    label: "Boa",
+                                    children: []
+                                },
+                                {
+                                    label: "Corn Snake",
+                                    children: []
+                                },
+                                {
+                                    label: "Garter Snake",
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            label: "turtles",
+                            children: [
+                                {
+                                    label: "Red-Eared Slider",
+                                    children: []
+                                },
+                                {
+                                    label: "Box Turtle",
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            label: "tortise",
+                            children: [
+                                {
+                                    label: "African Spurred Tortoise",
+                                    children: []
+                                },
+                                {
+                                    label: "Galapagos Tortoise",
+                                    children: []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ];
+            $('#hierarchicalTags').tagit({
+                availableTags: pets,
+                pruneTags: true,
+                hierarchical: true
+            });
+
         });
     </script>
 
@@ -239,6 +763,68 @@
                 <li>Delete me</li>
                 <li>I am deleted</li>
                 <li>So am I</li>
+            </ul>
+            <input type="submit" value="Submit">
+        </form>
+
+        <hr>
+        <h3>Hierarchical Tags</h3>
+           <form>
+            <p>
+                Sometimes it is useful to enforce or provide a hierachical structure to the available tags, for example if you were using tags to classify a pet.<br><br>
+
+                In order to use hierarchical tags set hierarchical to true and set the availableTags to a list of objects in the following format:<br>
+                <code>
+                    <div style="margin-left:0px; background: #ffc; padding:5px 20px;">
+                        {
+                        <div style="margin-left:15px;">
+                            label: "",<br>
+                            children: []
+                        </div>
+                        }
+                    </div>
+                    <br>
+                </code>
+                Example:
+                <code>
+                    <div style="margin-left:0px; background: #ffc; padding:5px 20px;">
+                        availableTags: [
+                        <div style="margin-left:15px;">
+                            {
+                            <div style="margin-left:15px;">
+                                label: "dogs",<br>
+                                children: [
+                            <div style="margin-left:15px;">
+                                    {
+                                <div style="margin-left:15px;">
+                                        label:"Chihuahua",<br>
+                                        children: []
+                                </div>
+                                    },<br>
+                                    {
+                                <div style="margin-left:15px;">
+                                        label:"German Shepherd",<br>
+                                        children: []
+                                </div>
+                                    }
+                            </div>
+                                ]
+                        </div>
+                            },<br>
+                            {
+                            <div style="margin-left:15px;">
+                                label: "cats",<br>
+                                children: []
+                            </div>
+                            }
+                        </div>
+                        ]
+                    </div>
+                </code><br>
+
+                Start typing to see the available options at each level.
+            </p>
+            <ul id="hierarchicalTags">
             </ul>
             <input type="submit" value="Submit">
         </form>

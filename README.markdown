@@ -203,6 +203,48 @@ When enabled and a tag is deleted all of the sbsequent tags will also be deleted
 Defaults to *false*
 
 
+### hierarchical (boolean)
+
+When enabled the available tags at each level are derived from the list of tags.
+
+Defaults to *false*
+
+In order to use hierarchical tags set hierarchical to true and set the availableTags to a list of objects in the following format:
+    {
+        label: "",
+        children: []
+    }
+
+Example:
+    availableTags: [
+        {
+            label: "dogs",
+            children: [
+                {
+                    label:"Chihuahua",
+                    children: []
+                },
+                {
+                    label:"German Shepherd",
+                    children: []
+                }
+            ]
+        },
+        {
+            label: "cats",
+            children: [
+                {
+                    label:"Siamese",
+                    children: []
+                }
+            ]
+        }
+    ]
+
+It is highly recommended to use the pruneTags option in conjunction with the hierarchical option.
+
+You cannot use the hierarchical option and provide a tagSource() method.
+
 ## Events
 
 ### onTagAdded (function, Callback)

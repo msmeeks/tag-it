@@ -88,6 +88,9 @@
             // Whether to remove the selected tag and all the tags that were added after it when deleting a tag.
             pruneTags: false,
 
+            // Whether or not to use a hierachical tag structure.
+            hierarchicalTags: false,
+
             // Event callbacks.
             onTagAdded  : null,
             onTagRemoved: null,
@@ -122,15 +125,60 @@
             }
 
             if (!this.options.tagSource && this.options.availableTags.length > 0) {
-                this.options.tagSource = function(search, showChoices) {
-                    var filter = search.term.toLowerCase();
-                    var choices = $.grep(that.options.availableTags, function(element) {
-                        // Only match autocomplete options that begin with the search term.
-                        // (Case insensitive.)
-                        return (element.toLowerCase().indexOf(filter) === 0);
-                    });
-                    showChoices(that._subtractArray(choices, this.assignedTags()));
-                };
+                if (hierarchicalTags) {
+                    this.options.tagSource = function(search, showChoices) {
+                        var that = this;
+
+                        var options = that.options.availableTags;
+
+                        var tags = this.assignedTags();
+                        var num_tags = tags.length;
+
+                        for (var i = 0; i < num_tags; i++) {
+                            var tag = tags[i].toLowerCase();
+                            var num_options = options.length;
+                            for (var j = 0; j < num_options; j++){
+                                if (options[j].label.toLowerCase() == tag) {
+                                    options = options[j].children;
+                                    break;
+                                }
+                            }
+                        }
+
+                        var values = [];
+                        var num_options = options.length;
+                        for (var i = 0; i < num_options; i++) {
+                            var item = options[i].label;
+
+                            // Order the options based as follows: items that start with the serach term, items that contain the search term, items that do no contain the serach term.
+                            var position = item.toLowerCase().indexOf(search.term.toLowerCase());
+                            if (position == 0) {
+                                values.push([0,item]);
+                            } else if (position > 0) {
+                                values.push([1,item]);
+                            } else {
+                                values.push([2,item]);
+                            }
+                        }
+                        values.sort();
+
+                        var results = [];
+                        for (var i = 0; i < values.length; i++) {
+                            results.push(values[i][1]);
+                        }
+                        showChoices(results);
+                    };
+                } else {
+                    this.options.tagSource = function(search, showChoices) {
+                        var filter = search.term.toLowerCase();
+                        var choices = $.grep(that.options.availableTags, function(element) {
+                            // Only match autocomplete options that begin with the search term.
+                            // (Case insensitive.)
+                            return (element.toLowerCase().indexOf(filter) === 0);
+                        });
+                        showChoices(that._subtractArray(choices, this.assignedTags()));
+                    };
+                }
             }
 
             // Bind tagSource callback functions to this context.
@@ -257,7 +305,7 @@
             // Autocomplete.
             if (this.options.tagSource) {
                 this._tagInput.autocomplete({
-					delay: 0,
+                    delay: 0,
                     source: this.options.tagSource,
                     select: function(event, ui) {
                         // Delete the last tag if we autocomplete something despite the input being empty

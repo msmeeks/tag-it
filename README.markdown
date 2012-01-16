@@ -210,12 +210,14 @@ When enabled the available tags at each level are derived from the list of tags.
 Defaults to *false*
 
 In order to use hierarchical tags set hierarchical to true and set the availableTags to a list of objects in the following format:
+
     {
         label: "",
         children: []
     }
 
 Example:
+
     availableTags: [
         {
             label: "dogs",

@@ -257,6 +257,7 @@
             // Autocomplete.
             if (this.options.tagSource) {
                 this._tagInput.autocomplete({
+					delay: 0,
                     source: this.options.tagSource,
                     select: function(event, ui) {
                         // Delete the last tag if we autocomplete something despite the input being empty
@@ -459,10 +460,8 @@
 
         pruneTag: function(targetTag) {
             // Removes the specified tag and all the tags that were added after it.
-            console.log('pruning')
             var that = this;
             targetTag = $(targetTag)[0];
-            console.log(targetTag);
 
             var found = false;
 
